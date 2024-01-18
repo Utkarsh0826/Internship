@@ -16,7 +16,7 @@ def analyze_excel_file(file_path, consecutive_days_threshold=7):
         short_break_printed = set()
         long_shift_printed = set()
 
-        print("part 1: ")
+        print("Employees worked for 7 consecutive days: ")
 
         for index, row in df.iterrows():
             employee_name = row['Employee Name']
@@ -37,7 +37,7 @@ def analyze_excel_file(file_path, consecutive_days_threshold=7):
                     print(f"Employee: {employee_name}, Position: {position_id}")
                     consecutive_printed.add(employee_name)
 
-        print("part 2: ")
+        print("less than 10 hours of time between shifts but greater than 1 hour: ")
 
         employee_breaks = {}  # Dictionary to track breaks for each employee
 
@@ -65,7 +65,7 @@ def analyze_excel_file(file_path, consecutive_days_threshold=7):
 
             employee_breaks[employee_name] = row['Time Out']
 
-        print("part 3: ")
+        print("Who has worked for more than 14 hours in a single shift: ")
 
         for index, row in df.iterrows():
             employee_name = row['Employee Name']
